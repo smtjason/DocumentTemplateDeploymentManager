@@ -6,9 +6,11 @@
     <title>Document Template Deployment Manager</title>
     <authors>Jason Rosenberg</authors>
     <owners>Jason Rosenberg</owners>
+    <projectUrl>https://github.com/smtjason/DocumentTemplateDeploymentManager</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/smtjason/DocumentTemplateDeploymentManager/main/assets/icon-80.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
-    <description>Reliably moves selected Dataverse Word document templates from one Source connection to one or more Target connections, repairing target-specific bindings and validating stored content.</description>
+    <description>Moves selected Dataverse Word document templates from one Source connection to one or more Target connections, repairing target-specific bindings and validating stored content.</description>
     <summary>Move and validate Dataverse Word templates across environments.</summary>
     <releaseNotes>Initial release: multiple templates, multiple Targets, exact-match update/create, target ObjectTypeCode rebinding, and post-upload validation.</releaseNotes>
     <copyright>Copyright 2026 Jason Rosenberg</copyright>

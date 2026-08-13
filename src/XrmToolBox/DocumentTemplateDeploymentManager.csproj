@@ -15,6 +15,8 @@
     <PackageTags>XrmToolBox Dataverse Dynamics365 Word Document Templates</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/smtjason/DocumentTemplateDeploymentManager</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/smtjason/DocumentTemplateDeploymentManager</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="XrmToolBoxPackage" Version="1.2025.10.74" />

@@ -1,5 +1,7 @@
 # Document Template Deployment Manager
 
+[![Build XrmToolBox tool](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-xrmtoolbox.yml/badge.svg)](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-xrmtoolbox.yml)
+
 An XrmToolBox plugin for moving Microsoft Word document templates between Dataverse environments while repairing the environment-specific `ObjectTypeCode` embedded in DOCX XML bindings.
 
 This repository is organized as one product with platform-specific implementations:
