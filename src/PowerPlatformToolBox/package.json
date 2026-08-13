@@ -24,6 +24,10 @@
     "url": "git+https://github.com/smtjason/DocumentTemplateDeploymentManager.git",
     "directory": "src/PowerPlatformToolBox"
   },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "features": {
     "minAPI": "1.2.2",
     "multiConnection": "required"

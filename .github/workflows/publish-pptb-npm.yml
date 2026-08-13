@@ -1,0 +1,70 @@
+name: Publish Power Platform ToolBox package
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - src/PowerPlatformToolBox/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-pptb-npm
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: npm
+    defaults:
+      run:
+        working-directory: src/PowerPlatformToolBox
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test DOCX rebinding
+        run: npm test
+
+      - name: Build production package
+        run: npm run build
+
+      - name: Validate Power Platform ToolBox package
+        run: npm run validate
+
+      - name: Verify package contents
+        run: |
+          npm pack --dry-run --json > package-contents.json
+          node -e "const p=require('./package-contents.json')[0]; if (!p.files.some(f => f.path === 'npm-shrinkwrap.json')) throw new Error('npm-shrinkwrap.json is missing from the package');"
+
+      - name: Check whether version is already published
+        id: version
+        shell: bash
+        run: |
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "name=$PACKAGE_NAME" >> "$GITHUB_OUTPUT"
+          echo "version=$PACKAGE_VERSION" >> "$GITHUB_OUTPUT"
+          if npm view "$PACKAGE_NAME@$PACKAGE_VERSION" version >/dev/null 2>&1; then
+            echo "published=true" >> "$GITHUB_OUTPUT"
+            echo "$PACKAGE_NAME@$PACKAGE_VERSION is already published; skipping."
+          else
+            echo "published=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish public npm package
+        if: steps.version.outputs.published != 'true'
+        run: npm publish --access public
