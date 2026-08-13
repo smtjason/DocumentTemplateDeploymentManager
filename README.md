@@ -1,14 +1,15 @@
 # Document Template Deployment Manager
 
 [![Build XrmToolBox tool](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-xrmtoolbox.yml/badge.svg)](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-xrmtoolbox.yml)
+[![Build Power Platform ToolBox tool](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-power-platform-toolbox.yml/badge.svg)](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-power-platform-toolbox.yml)
 [![NuGet](https://img.shields.io/nuget/v/XrmToolBox.DocumentTemplateDeploymentManager.svg)](https://www.nuget.org/packages/XrmToolBox.DocumentTemplateDeploymentManager/)
 
-An XrmToolBox plugin for moving Microsoft Word document templates between Dataverse environments while repairing the environment-specific `ObjectTypeCode` embedded in DOCX XML bindings.
+A cross-platform tool for moving Microsoft Word document templates between Dataverse environments while repairing the environment-specific `ObjectTypeCode` embedded in DOCX XML bindings. Implementations are available for XrmToolBox and Power Platform ToolBox.
 
 This repository is organized as one product with platform-specific implementations:
 
 - `src/XrmToolBox` contains the production XrmToolBox implementation.
-- `src/PowerPlatformToolBox` is reserved for the planned Power Platform ToolBox implementation.
+- `src/PowerPlatformToolBox` contains the production Power Platform ToolBox implementation.
 - `assets` contains shared product artwork.
 
 ## Features
@@ -44,6 +45,20 @@ Or run:
 ```powershell
 & .\src\XrmToolBox\Install-Local.ps1 -XrmToolBoxDirectory 'C:\Path\To\XrmToolBox'
 ```
+
+### Power Platform ToolBox
+
+Requirements: Node.js 18 or later.
+
+```powershell
+Set-Location .\src\PowerPlatformToolBox
+npm ci
+npm test
+npm run build
+npm run validate
+```
+
+For local testing, enable the Power Platform ToolBox debug menu and load the `src/PowerPlatformToolBox` directory as a local tool. Select the active connection as Source and the secondary connection as Target.
 
 ## Safety behavior
 

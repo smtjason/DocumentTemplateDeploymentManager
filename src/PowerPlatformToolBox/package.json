@@ -1,0 +1,51 @@
+{
+  "name": "@smtjason/document-template-deployment-manager",
+  "version": "1.0.0",
+  "displayName": "Document Template Deployment Manager",
+  "description": "Deploy Dataverse Word document templates safely between environments.",
+  "main": "index.html",
+  "icon": "icon/document-template-deployment-manager.svg",
+  "license": "MIT",
+  "author": "Jason Rosenberg",
+  "contributors": [
+    {
+      "name": "Jason Rosenberg",
+      "url": "https://github.com/smtjason"
+    }
+  ],
+  "keywords": ["powerplatform", "dataverse", "pptb", "document-template", "word"],
+  "configurations": {
+    "repository": "https://github.com/smtjason/DocumentTemplateDeploymentManager",
+    "website": "https://github.com/smtjason/DocumentTemplateDeploymentManager",
+    "readmeUrl": "https://raw.githubusercontent.com/smtjason/DocumentTemplateDeploymentManager/main/src/PowerPlatformToolBox/README.md"
+  },
+  "features": {
+    "minAPI": "1.2.2",
+    "multiConnection": "required"
+  },
+  "engines": { "node": ">=18.0.0" },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "test": "vitest run",
+    "validate": "pptb-validate",
+    "finalize-package": "npm shrinkwrap",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@pptb/types": "^1.2.4-beta.4",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@pptb/validate": "^0.0.2",
+    "typescript": "^5.6.3",
+    "vite": "^7.1.11",
+    "vitest": "^3.2.4"
+  },
+  "files": ["dist"]
+}
