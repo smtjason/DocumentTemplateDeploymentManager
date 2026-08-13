@@ -1,0 +1,29 @@
+# Build output
+**/bin/
+**/obj/
+artifacts/
+packages/
+
+# IDE and user settings
+.vs/
+.vscode/
+*.user
+*.suo
+
+# NuGet packages and symbols
+*.nupkg
+*.snupkg
+
+# Power Platform ToolBox / Node
+**/node_modules/
+**/dist/
+*.log
+
+# Local Dataverse artifacts and credentials
+*.docx
+*.xlsx
+*.env
+.env.*
+*connection*.json
+*token*.json
+template-deployment-output/

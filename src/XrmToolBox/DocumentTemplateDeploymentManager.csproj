@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>XrmToolBox.DocumentTemplateDeploymentManager</AssemblyName>
+    <RootNamespace>XrmToolBox.DocumentTemplateDeploymentManager</RootNamespace>
+    <Version>1.0.0</Version>
+    <Authors>Jason Rosenberg</Authors>
+    <Product>Document Template Deployment Manager for XrmToolBox</Product>
+    <Description>Move, rebind, and validate Dataverse Word document templates across environments.</Description>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageId>XrmToolBox.DocumentTemplateDeploymentManager</PackageId>
+    <PackageTags>XrmToolBox Dataverse Dynamics365 Word Document Templates</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="XrmToolBoxPackage" Version="1.2025.10.74" />
+    <PackageReference Include="MscrmTools.Xrm.Connection" Version="1.2025.9.64" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net48" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+  </ItemGroup>
+</Project>
