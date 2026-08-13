@@ -1,0 +1,48 @@
+name: Build Power Platform ToolBox tool
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/PowerPlatformToolBox
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: src/PowerPlatformToolBox/npm-shrinkwrap.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Test DOCX rebinding
+        run: npm test
+
+      - name: Build production package
+        run: npm run build
+
+      - name: Validate Power Platform ToolBox package
+        run: npm run validate
+
+      - name: Verify package contents
+        run: npm pack --dry-run
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: PowerPlatformToolBox.DocumentTemplateDeploymentManager
+          path: src/PowerPlatformToolBox/dist

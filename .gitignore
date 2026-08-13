@@ -13,10 +13,12 @@ packages/
 # NuGet packages and symbols
 *.nupkg
 *.snupkg
+*.tgz
 
 # Power Platform ToolBox / Node
 **/node_modules/
 **/dist/
+.reference-pptb-samples/
 *.log
 
 # Local Dataverse artifacts and credentials
