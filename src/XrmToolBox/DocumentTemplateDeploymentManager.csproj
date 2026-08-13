@@ -11,7 +11,7 @@
     <Product>Document Template Deployment Manager for XrmToolBox</Product>
     <Description>Move, rebind, and validate Dataverse Word document templates across environments.</Description>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageId>JR.XrmToolBox.DocumentTemplateDeploymentManager</PackageId>
+    <PackageId>VantianTech.XrmToolBox.DocumentTemplateDeploymentManager</PackageId>
     <PackageTags>XrmToolBox Dataverse Dynamics365 Word Document Templates</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>

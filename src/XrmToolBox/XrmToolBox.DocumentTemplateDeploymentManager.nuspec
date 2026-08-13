@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>JR.XrmToolBox.DocumentTemplateDeploymentManager</id>
+    <id>VantianTech.XrmToolBox.DocumentTemplateDeploymentManager</id>
     <version>1.2026.8.14</version>
     <title>Document Template Deployment Manager</title>
     <authors>Jason Rosenberg</authors>
