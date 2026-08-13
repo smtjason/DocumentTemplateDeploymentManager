@@ -1,6 +1,6 @@
 {
   "name": "@smtjason/document-template-deployment-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Document Template Deployment Manager",
   "description": "Deploy Dataverse Word document templates safely between environments.",
   "main": "index.html",
@@ -18,6 +18,15 @@
     "repository": "https://github.com/smtjason/DocumentTemplateDeploymentManager",
     "website": "https://github.com/smtjason/DocumentTemplateDeploymentManager",
     "readmeUrl": "https://raw.githubusercontent.com/smtjason/DocumentTemplateDeploymentManager/main/src/PowerPlatformToolBox/README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smtjason/DocumentTemplateDeploymentManager.git",
+    "directory": "src/PowerPlatformToolBox"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   },
   "features": {
     "minAPI": "1.2.2",
@@ -47,5 +56,5 @@
     "vite": "^7.1.11",
     "vitest": "^3.2.4"
   },
-  "files": ["dist"]
+  "files": ["dist", "npm-shrinkwrap.json"]
 }

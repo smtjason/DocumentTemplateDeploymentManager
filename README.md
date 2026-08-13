@@ -60,6 +60,8 @@ npm run validate
 
 For local testing, enable the Power Platform ToolBox debug menu and load the `src/PowerPlatformToolBox` directory as a local tool. Select the active connection as Source and the secondary connection as Target.
 
+Power Platform ToolBox package releases are published to npm by `.github/workflows/publish-pptb-npm.yml` when `src/PowerPlatformToolBox/**` changes on `main`. The workflow uses npm trusted publishing and requires the GitHub environment `npm` plus a matching trusted-publisher policy for `@smtjason/document-template-deployment-manager`.
+
 ## Safety behavior
 
 The plugin never deletes templates. A Target operation is either:
