@@ -2,7 +2,7 @@
 
 [![Build XrmToolBox tool](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-xrmtoolbox.yml/badge.svg)](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-xrmtoolbox.yml)
 [![Build Power Platform ToolBox tool](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-power-platform-toolbox.yml/badge.svg)](https://github.com/smtjason/DocumentTemplateDeploymentManager/actions/workflows/build-power-platform-toolbox.yml)
-[![NuGet](https://img.shields.io/nuget/v/XrmToolBox.DocumentTemplateDeploymentManager.svg)](https://www.nuget.org/packages/XrmToolBox.DocumentTemplateDeploymentManager/)
+[![NuGet](https://img.shields.io/nuget/v/JasonRosenberg.XrmToolBox.DocumentTemplateDeploymentManager.svg)](https://www.nuget.org/packages/JasonRosenberg.XrmToolBox.DocumentTemplateDeploymentManager/)
 
 A cross-platform tool for moving Microsoft Word document templates between Dataverse environments while repairing the environment-specific `ObjectTypeCode` embedded in DOCX XML bindings. Implementations are available for XrmToolBox and Power Platform ToolBox.
 
