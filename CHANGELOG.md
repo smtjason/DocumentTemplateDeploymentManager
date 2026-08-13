@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- Include `npm-shrinkwrap.json` in the published package so Power Platform ToolBox can install runtime dependencies before launching the tool.
+- Add canonical npm repository metadata.
+
 ## 1.0.0
 
 - Added the Power Platform ToolBox implementation.

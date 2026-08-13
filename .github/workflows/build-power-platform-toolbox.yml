@@ -39,7 +39,9 @@ jobs:
         run: npm run validate
 
       - name: Verify package contents
-        run: npm pack --dry-run
+        run: |
+          npm pack --dry-run --json > package-contents.json
+          node -e "const p=require('./package-contents.json')[0]; if (!p.files.some(f => f.path === 'npm-shrinkwrap.json')) throw new Error('npm-shrinkwrap.json is missing from the package');"
 
       - name: Upload production build
         uses: actions/upload-artifact@v4
