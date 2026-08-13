@@ -6,6 +6,7 @@
   "main": "index.html",
   "icon": "icon/document-template-deployment-manager.svg",
   "license": "MIT",
+  "author": "Jason Rosenberg",
   "contributors": [
     {
       "name": "Jason Rosenberg",
