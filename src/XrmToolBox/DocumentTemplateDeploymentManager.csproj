@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <AssemblyName>XrmToolBox.DocumentTemplateDeploymentManager</AssemblyName>
     <RootNamespace>XrmToolBox.DocumentTemplateDeploymentManager</RootNamespace>
-    <Version>1.2026.8.13</Version>
+    <Version>1.2026.8.14</Version>
     <Authors>Jason Rosenberg</Authors>
     <Product>Document Template Deployment Manager for XrmToolBox</Product>
     <Description>Move, rebind, and validate Dataverse Word document templates across environments.</Description>
