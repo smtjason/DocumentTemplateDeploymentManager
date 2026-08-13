@@ -41,4 +41,4 @@ jobs:
           user: ${{ vars.NUGET_USER }}
 
       - name: Publish package
-        run: dotnet nuget push artifacts/release/JasonRosenberg.XrmToolBox.DocumentTemplateDeploymentManager.1.2026.8.14.nupkg --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push artifacts/release/JR.XrmToolBox.DocumentTemplateDeploymentManager.1.2026.8.14.nupkg --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json
