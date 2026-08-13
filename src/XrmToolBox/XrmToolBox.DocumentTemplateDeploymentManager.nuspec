@@ -2,12 +2,14 @@
 <package>
   <metadata>
     <id>XrmToolBox.DocumentTemplateDeploymentManager</id>
-    <version>1.0.0</version>
+    <version>1.2026.8.13</version>
     <title>Document Template Deployment Manager</title>
     <authors>Jason Rosenberg</authors>
     <owners>Jason Rosenberg</owners>
     <projectUrl>https://github.com/smtjason/DocumentTemplateDeploymentManager</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/smtjason/DocumentTemplateDeploymentManager/main/assets/icon-80.png</iconUrl>
+    <icon>icon-80.png</icon>
+    <readme>README.md</readme>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <description>Moves selected Dataverse Word document templates from one Source connection to one or more Target connections, repairing target-specific bindings and validating stored content.</description>
@@ -16,10 +18,14 @@
     <copyright>Copyright 2026 Jason Rosenberg</copyright>
     <tags>XrmToolBox Dataverse Dynamics365 Word Document Templates</tags>
     <dependencies>
-      <dependency id="XrmToolBox" version="1.2025.10.74" />
+      <group targetFramework=".NETFramework4.8">
+        <dependency id="XrmToolBox" version="1.2025.10.74" />
+      </group>
     </dependencies>
   </metadata>
   <files>
     <file src="bin\Release\net48\XrmToolBox.DocumentTemplateDeploymentManager.dll" target="lib\net48\Plugins" />
+    <file src="..\..\assets\icon-80.png" target="" />
+    <file src="..\..\README.md" target="" />
   </files>
 </package>
