@@ -1,0 +1,44 @@
+name: Publish XrmToolBox NuGet package
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    name: Build, validate, and publish
+    runs-on: windows-latest
+    environment: release
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Set up NuGet
+        uses: NuGet/setup-nuget@v2
+
+      - name: Restore
+        run: dotnet restore src/XrmToolBox/DocumentTemplateDeploymentManager.csproj --configfile src/XrmToolBox/NuGet.Config
+
+      - name: Build
+        run: dotnet build src/XrmToolBox/DocumentTemplateDeploymentManager.csproj --configuration Release --no-restore
+
+      - name: Pack and analyze
+        run: nuget pack src/XrmToolBox/XrmToolBox.DocumentTemplateDeploymentManager.nuspec -OutputDirectory artifacts/release
+
+      - name: NuGet trusted publishing login
+        id: nuget-login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ vars.NUGET_USER }}
+
+      - name: Publish package
+        run: dotnet nuget push artifacts/release/XrmToolBox.DocumentTemplateDeploymentManager.1.2026.8.13.nupkg --api-key "${{ steps.nuget-login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
